@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Slot Machine</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Fruit Slot Machine</h1>
+        
+        <!-- Marcador de saldo y apuestas -->
+        <div class="scoreboard">
+            <div>Saldo: <span id="balance">100</span>€</div>
+            <div>Apuesta: <span id="bet">10</span>€</div>
+        </div>
+        
+        <!-- Contenedor de los 3 rodillos -->
+        <div class="slots-container">
+            <!-- Rodillo 1 -->
+            <div class="slot-window">
+                <div class="reel" id="reel1">
+                    <img src="images/cereza.png" alt="Cereza">
+                    <img src="images/limon.png" alt="Limón">
+                    <img src="images/sandia.png" alt="Sandía">
+                    <img src="images/uva.png" alt="Uva">
+                    <img src="images/siete.png" alt="Siete">
+                </div>
+            </div>
+            <!-- Rodillo 2 -->
+            <div class="slot-window">
+                <div class="reel" id="reel2">
+                    <img src="images/cereza.png" alt="Cereza">
+                    <img src="images/limon.png" alt="Limón">
+                    <img src="images/sandia.png" alt="Sandía">
+                    <img src="images/uva.png" alt="Uva">
+                    <img src="images/siete.png" alt="Siete">
+                </div>
+            </div>
+            <!-- Rodillo 3 -->
+            <div class="slot-window">
+                <div class="reel" id="reel3">
+                    <img src="images/cereza.png" alt="Cereza">
+                    <img src="images/limon.png" alt="Limón">
+                    <img src="images/sandia.png" alt="Sandía">
+                    <img src="images/uva.png" alt="Uva">
+                    <img src="images/siete.png" alt="Siete">
+                </div>
+            </div>
+        </div>
+
+        <!-- Panel de control -->
+        <div class="controls">
+            <button id="btn-spin" class="btn btn-spin">Girar</button>
+            <button id="btn-stop" class="btn btn-stop" disabled>Pausar</button>
+        </div>
+
+        <!-- Mensaje de resultado -->
+        <div id="message" class="message">¡Apuesta: 10€, pulsa Girar!</div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
