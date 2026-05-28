@@ -76,7 +76,6 @@ h1 {
     position: absolute;
     top: 0;
     width: 100%;
-    transition: transform 0.2s ease-out;
 }
 
 .reel img {
@@ -86,20 +85,59 @@ h1 {
     padding: 25px 0;
 }
 
-/* Animación de giro de rueda infinito */
-.spinning {
-    animation: spinWheel 0.15s linear infinite;
+.stop-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
 }
 
-@keyframes spinWheel {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-600px); }
+.stop-buttons .btn {
+    width: 30%;
+}
+
+.bet-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.btn-bet {
+    width: auto;
+    padding: 8px 18px;
+    font-size: 1.3rem;
+    background: #ff007f;
+    color: #fff;
+}
+
+.btn-bet:hover:not(:disabled) {
+    background: #cc005f;
+    box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+.btn-allin {
+    width: auto;
+    padding: 8px 14px;
+    font-size: 0.95rem;
+    background: #ff6600;
+    color: #fff;
+}
+
+.btn-allin:hover:not(:disabled) {
+    background: #cc5200;
+    box-shadow: 0 0 15px rgba(255, 102, 0, 0.5);
 }
 
 .controls {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin-bottom: 20px;
+}
+
+.controls .btn {
+    width: 60%;
 }
 
 .btn {
@@ -157,4 +195,49 @@ h1 {
 .lose {
     color: #ff3333;
     text-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+}
+
+.prize-table {
+    margin-top: 20px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 12px;
+    border: 1px solid #444;
+}
+
+.prize-table h3 {
+    color: #ff007f;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.prize-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.prize-table th {
+    color: #00ffbb;
+    padding: 4px 8px;
+    border-bottom: 1px solid #444;
+}
+
+.prize-table td {
+    padding: 4px 8px;
+    border-bottom: 1px solid #333;
+}
+
+.prize-table td:last-child {
+    text-align: right;
+    color: #00ff66;
+    font-weight: bold;
+}
+
+.prize-table .pair-row td {
+    color: #aaa;
+}
+
+.prize-table .pair-row td:last-child {
+    color: #ffcc00;
 }

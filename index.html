@@ -50,14 +50,44 @@
             </div>
         </div>
 
+        <!-- Botones de parada individuales -->
+        <div class="stop-buttons">
+            <button id="btn-stop1" class="btn btn-stop" disabled>Parar 1</button>
+            <button id="btn-stop2" class="btn btn-stop" disabled>Parar 2</button>
+            <button id="btn-stop3" class="btn btn-stop" disabled>Parar 3</button>
+        </div>
+
+        <!-- Control de apuesta -->
+        <div class="bet-controls">
+            <button id="btn-bet-down" class="btn btn-bet">−</button>
+            <span>Apuesta: <strong id="bet-display">10</strong>€</span>
+            <button id="btn-bet-up" class="btn btn-bet">+</button>
+            <button id="btn-allin" class="btn btn-allin">All In</button>
+        </div>
+
         <!-- Panel de control -->
         <div class="controls">
             <button id="btn-spin" class="btn btn-spin">Girar</button>
-            <button id="btn-stop" class="btn btn-stop" disabled>Pausar</button>
         </div>
 
         <!-- Mensaje de resultado -->
         <div id="message" class="message">¡Apuesta: 10€, pulsa Girar!</div>
+
+        <!-- Tabla de premios -->
+        <div class="prize-table">
+            <h3>Tabla de premios</h3>
+            <table>
+                <tr><th>Combinación</th><th>Premio</th></tr>
+                <tr><td>🍒🍒🍒 Tres cerezas</td><td>×2</td></tr>
+                <tr><td>🍋🍋🍋 Tres limones</td><td>×3</td></tr>
+                <tr><td>🍉🍉🍉 Tres sandías</td><td>×5</td></tr>
+                <tr><td>🍇🍇🍇 Tres uvas</td><td>×8</td></tr>
+                <tr><td>7️⃣7️⃣7️⃣ Tres sietes</td><td>×20</td></tr>
+                <tr class="pair-row"><td>🍇🍇 Pareja uvas</td><td>×2</td></tr>
+                <tr class="pair-row"><td>7️⃣7️⃣ Pareja sietes</td><td>×5</td></tr>
+                <tr class="pair-row"><td>Pareja cualquier otra</td><td>recuperas apuesta</td></tr>
+            </table>
+        </div>
     </div>
 
     <script src="js/script.js"></script>
