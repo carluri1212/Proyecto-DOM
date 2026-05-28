@@ -16,18 +16,32 @@ body {
 
 .game-container {
     background: rgba(255, 255, 255, 0.05);
-    padding: 30px;
+    padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     border: 2px solid #ff007f;
+    display: flex;
+    gap: 25px;
+    align-items: flex-start;
+    max-width: 900px;
+    width: 95%;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
     text-align: center;
-    max-width: 500px;
-    width: 90%;
+}
+
+.right-panel {
+    flex-shrink: 0;
+    width: 220px;
 }
 
 h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
+    font-size: 1.8rem;
     color: #ff007f;
     text-shadow: 0 0 10px rgba(255, 0, 127, 0.5);
 }
@@ -38,7 +52,6 @@ h1 {
     background: rgba(0, 0, 0, 0.4);
     padding: 12px 20px;
     border-radius: 8px;
-    margin-bottom: 25px;
     font-size: 1.2rem;
     border: 1px solid #444;
 }
@@ -55,7 +68,8 @@ h1 {
     padding: 20px;
     border-radius: 15px;
     border: 4px solid #333;
-    margin-bottom: 25px;
+    margin-bottom: 12px;
+    gap: 10px;
 }
 
 .slot-window {
@@ -88,7 +102,7 @@ h1 {
 .stop-buttons {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 12px;
+    gap: 10px;
 }
 
 .stop-buttons .btn {
@@ -99,8 +113,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin-bottom: 12px;
+    gap: 10px;
     font-size: 1.1rem;
 }
 
@@ -133,7 +146,6 @@ h1 {
 .controls {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .controls .btn {
@@ -198,7 +210,6 @@ h1 {
 }
 
 .prize-table {
-    margin-top: 20px;
     background: rgba(0, 0, 0, 0.4);
     border-radius: 10px;
     padding: 12px;
