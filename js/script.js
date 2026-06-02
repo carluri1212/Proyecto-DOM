@@ -23,7 +23,6 @@ const SPIN_SPEED = 15; // píxeles que avanza el rodillo en cada frame
 let reelPositions = [0, 0, 0];   // posición actual de cada rodillo en píxeles
 let reelIntervals = [null, null, null]; // guardamos el setInterval de cada rodillo para poder pararlo
 let reelSpeeds = [SPIN_SPEED, SPIN_SPEED, SPIN_SPEED]; // velocidad actual (baja al frenar)
-let reelStopped = [false, false, false]; // true cuando el rodillo ha terminado de parar
 let currentResults = [0, 0, 0];  // índice de la fruta que quedó en cada rodillo
 let reelsStoppedCount = 0;       // contador para saber cuándo han parado los tres
 
@@ -53,25 +52,31 @@ btnStops[0].addEventListener('click', function() { stopReel(0); });
 btnStops[1].addEventListener('click', function() { stopReel(1); });
 btnStops[2].addEventListener('click', function() { stopReel(2); });
 
+// Función para actualizar la apuesta en los dos sitios donde se muestra
+function updateBetDisplay() {
+    betDisplay.textContent = bet;
+    document.getElementById('bet').textContent = bet;
+}
+
 // Botones para subir y bajar la apuesta de 10 en 10
 btnBetDown.addEventListener('click', function() {
     if (bet > BET_MIN) {
         bet -= BET_STEP;
-        betDisplay.textContent = bet;
+        updateBetDisplay();
     }
 });
 
 btnBetUp.addEventListener('click', function() {
     if (bet < BET_MAX && bet + BET_STEP <= balance) {
         bet += BET_STEP;
-        betDisplay.textContent = bet;
+        updateBetDisplay();
     }
 });
 
 // All In: pone toda la pasta de una vez
 btnAllIn.addEventListener('click', function() {
     bet = balance;
-    betDisplay.textContent = bet;
+    updateBetDisplay();
 });
 
 // Función principal: descuenta la apuesta y pone los rodillos a girar
@@ -85,11 +90,13 @@ function startSpinning() {
     balance -= bet;
     balanceDisplay.textContent = balance;
     btnSpin.disabled = true;
+    btnBetDown.disabled = true;
+    btnBetUp.disabled = true;
+    btnAllIn.disabled = true;
     message.textContent = "🎰 ¡Para cada rodillo cuando quieras!";
     message.className = "message";
 
     // Reinicio el estado de todos los rodillos
-    reelStopped = [false, false, false];
     reelsStoppedCount = 0;
 
     // Con un bucle arranco los tres rodillos a la vez
@@ -135,6 +142,9 @@ function stopReel(index) {
             // Cuando los tres han parado, compruebo el resultado
             if (reelsStoppedCount === 3) {
                 btnSpin.disabled = false;
+                btnBetDown.disabled = false;
+                btnBetUp.disabled = false;
+                btnAllIn.disabled = false;
                 checkResult();
             }
         } else {
